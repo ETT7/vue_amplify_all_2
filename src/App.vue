@@ -1,16 +1,27 @@
 <template>
 <authenticator>
   <template v-slot="{ user, signOut }">
-    <h3>Current Login: {{ user.attributes.email }}</h3>
+    <h3>Current Login: {{ user.attributes.email }}</h3><button type="button" class="btn btn-outline-danger" @click="signOut">Signout</button>
+    <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <router-link to="/uploadfiles" type="button" class="btn btn-secondary btn-lg btn-block">Upload</router-link><br><br>
+    <router-link to="/users" type="button" class="btn btn-secondary btn-lg btn-block">Users</router-link><br><br>
+    <router-link to="/tasks" type="button" class="btn btn-secondary btn-lg btn-block">Tasks</router-link><br><br>
+    <router-link to="/" type="button" class="btn btn-secondary btn-lg btn-block">Home</router-link><br><br>
+    
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
   <nav>
-    <router-link to="/uploadfiles">Upload</router-link> |
-    <router-link to="/users">Users</router-link> |
-    <router-link to="/tasks">Tasks</router-link> |
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    
   </nav>
   <router-view/>
-  <button @click="signOut">Sign Out</button>
       </template>
     </authenticator>
 </template>

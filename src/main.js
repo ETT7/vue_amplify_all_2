@@ -15,6 +15,12 @@ I18n.setLanguage("ja");
 //↑
 import VuePapaParse from "vue-papa-parse";
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
+
+
+
 
 Amplify.configure(awsconfig);
 
